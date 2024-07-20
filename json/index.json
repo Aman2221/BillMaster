@@ -1,0 +1,33 @@
+{
+    "userMenu" : [
+        {
+            "name" : "profile",
+            "icon" : "bx-user",
+            "path" : "profile"
+        },
+        {
+            "name" : "site settings",
+            "icon" : "bx-cog",
+            "path" : "settings"
+        },
+        {
+            "name" : "logout",
+            "icon" : "bx-power-off",
+            "path" : "logout"
+        }
+    ],
+    "flags" : [
+        {
+            "imrURL" : "/flags/us.svg",
+            "name" : "english"
+        },
+        {
+            "imrURL" : "/flags/ae.svg",
+            "name" : "arabic"
+        }, 
+        {
+            "imrURL" : "/flags/spain.svg",
+            "name" : "española"
+        }
+    ]
+}
