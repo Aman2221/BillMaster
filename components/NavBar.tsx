@@ -1,13 +1,15 @@
-"use client";
 import React, { useState } from "react";
 import Avatar from "./Avatar";
 import FullscreenButton from "./FullScreenBtn";
 import UserDropDown from "./DropDowns/UserDropDown";
 import Image from "next/image";
+import { useMyContext } from "@/context/my-context";
 
 const NavBar = () => {
   const [userMenu, setShowUserMenu] = useState(false);
   const [langMenu, setShowLangMenu] = useState(false);
+  const { showSidebar, setShowSidebar } = useMyContext();
+
   const [selectedLang, setSelectedLang] = useState({
     imrURL: "/flags/us.svg",
     name: "english",
@@ -19,8 +21,15 @@ const NavBar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center px-6 py-3">
-      <i className="bx bx-menu-alt-left text-white text-2xl cursor-pointer"></i>
+    <div
+      className={`${
+        showSidebar ? "ml-80" : "ml-0"
+      } flex justify-between items-start px-6 py-3 w-full transistion-500ms`}
+    >
+      <i
+        onClick={() => setShowSidebar(!showSidebar)}
+        className="bx bx-menu-alt-left text-white text-2xl cursor-pointer"
+      ></i>
       <div className="flex items-center gap-4">
         <div className="relative cursor-pointer">
           <Image

@@ -27,3 +27,7 @@
   justify-content: center;
   align-items: center;
 }
+
+.transistion-500ms {
+  transition: 0.5s;
+}

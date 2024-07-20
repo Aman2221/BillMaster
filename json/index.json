@@ -29,5 +29,114 @@
             "imrURL" : "/flags/spain.svg",
             "name" : "española"
         }
+    ],
+    "sidebar" : [
+        {
+            "name" : "company",
+            "icon" : "bx-building",
+            "path" : "/company",
+            "isSubmenu" : false
+        },
+        {
+            "name" : "invoices",
+            "icon" : "bx-dock-top",
+            "isSubmenu" : true,
+            "submenu" : [
+                {
+                    "name" : "invoice",
+                    "icon" : "bx-radio-circle",
+                    "path" : "/invoice"
+                }, 
+                {
+                    "name" : "add invoice",
+                    "icon" : "bx-radio-circle",
+                    "path" : "/add-invoice"
+                }
+            ]
+        },
+        {
+            "name" : "payments",
+            "icon" : "bxl-paypal",
+            "path" : "/payments",
+            "isSubmenu" : false            
+        },
+        {
+            "name" : "tax/charges",
+            "icon" : "bx-calculator",
+            "isSubmenu" : true,
+            "submenu" : [
+                {
+                    "name" : "tax",
+                    "icon" : "bx-radio-circle",
+                    "path" : "/tax"
+                }, 
+                {
+                    "name" : "discount",
+                    "icon" : "bx-radio-circle",
+                    "path" : "/discount"
+                },
+                {
+                    "name" : "shipping charge",
+                    "icon" : "bx-radio-circle",
+                    "path" : "/shipping-charge"
+                }
+            ]
+        },
+        {
+            "name" : "product",
+            "icon" : "bx-shopping-bag",
+            "isSubmenu" : true,
+            "submenu" : [
+                {
+                    "name" : "product list",
+                    "icon" : "bx-radio-circle",
+                    "path" : "/product/list"
+                }, 
+                {
+                    "name" : "add product",
+                    "icon" : "bx-radio-circle",
+                    "path" : "/add-product"
+                },
+                {
+                    "name" : "add new brand",
+                    "icon" : "bx-radio-circle",
+                    "path" : "/add-new-brand"
+                }, 
+                {
+                    "name" : "add new category",
+                    "icon" : "bx-radio-circle",
+                    "path" : "/add-new-category"
+                }, 
+                {
+                    "name" : "add product color",
+                    "icon" : "bx-radio-circle",
+                    "path" : "/add-product-color"
+                }
+            ]
+        },
+        {
+            "name" : "report",
+            "icon" : "bx-copy",
+            "isSubmenu" : true,
+            "submenu" : [
+                {
+                    "name" : "sale report",
+                    "icon" : "bx-radio-circle",
+                    "path" : "/sale-report"
+                }               
+            ]
+        },
+        {
+            "name" : "clients",
+            "icon" : "bx-user",
+            "path" : "/clients",
+            "isSubmenu" : false
+        },
+        {
+            "name" : "accountants",
+            "icon" : "bx-user-circle",
+            "path" : "/accuntants",
+            "isSubmenu" : false
+        }
     ]
 }
