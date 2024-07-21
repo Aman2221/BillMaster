@@ -1,27 +1,11 @@
 import React from "react";
 import data from "@/json/index.json";
+import Select from "@/common/Select";
 
 const DashboardOverview = () => {
   return (
     <div className="flex flex-col text-base flex-1 justify-between shadow-lg shadow-gray-800 rounded-sm">
-      <div className="p-4 flex items-center justify-between w-full">
-        <span className="text-2xl">Today&apos;s Overview</span>
-        <select
-          name="overview"
-          id="overview"
-          className="brder px-3 py-2 bg-transparent capitalize outline-none border border-gray-600"
-        >
-          {data.overview_filter.map((item) => (
-            <option
-              className="capitalize bg-black py-2 px-4 border-none outline-none pr-3"
-              key={item}
-              value={item}
-            >
-              {item.replace("_", " ")}
-            </option>
-          ))}
-        </select>
-      </div>
+      <Select heading="Today's Overview" data={data.overview_filter} />
       <div className="border-gray-600 border-t w-full flex justify-between">
         {data.overview.map((item) => (
           <div

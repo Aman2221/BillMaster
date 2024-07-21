@@ -5,7 +5,11 @@ const MainSection = ({ children }: { children: ReactNode }) => {
   const { showSidebar } = useMyContext();
 
   return (
-    <div className={`${showSidebar ? "ml-80" : "ml-0"} flex flex-col px-6`}>
+    <div
+      className={`${
+        showSidebar ? "ml-80" : "ml-0"
+      } flex flex-col px-6 transistion-500ms`}
+    >
       {children}
     </div>
   );

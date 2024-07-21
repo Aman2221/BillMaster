@@ -1,4 +1,5 @@
 "use client";
+import "react-tooltip/dist/react-tooltip.css";
 import React, { ReactNode } from "react";
 import NavBar from "./NavBar";
 import Sidebar from "./Sidebar";
