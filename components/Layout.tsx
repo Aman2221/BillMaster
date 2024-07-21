@@ -3,18 +3,21 @@ import React, { ReactNode } from "react";
 import NavBar from "./NavBar";
 import Sidebar from "./Sidebar";
 import { MyProvider } from "@/context/my-context";
+import MainSection from "./MainSection";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="flex">
+    <>
       <MyProvider>
         <>
           <Sidebar />
-          <NavBar />
-          {children}
+          <MainSection>
+            <NavBar />
+            {children}
+          </MainSection>
         </>
       </MyProvider>
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,31 @@
 {
+    "overview_filter" :["today", "last_week", "last_month", "last_year"],
+    "overview" : [
+        {
+            "name" : "clinet added",
+            "count" : "0",
+            "icon" : "bx-user-circle",
+            "icon_bg" : "bg-yellow-200"
+        },
+        {
+            "name" : "invoice sent",
+            "count" : "0",
+            "icon" : "bx-dock-top",
+            "icon_bg" : "bg-purple-200"
+        },
+        {
+            "name" : "paid invoice",
+            "count" : "0",
+            "icon" : "bx-dollar",
+            "icon_bg" : "bg-blue-200"
+        },
+        {
+            "name" : "unpaid invoice",
+            "count" : "0",
+            "icon" : "bx-book-alt",
+            "icon_bg" : "bg-red-200"
+        }
+    ],
     "userMenu" : [
         {
             "name" : "profile",

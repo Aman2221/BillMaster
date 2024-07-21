@@ -22,9 +22,7 @@ const NavBar = () => {
 
   return (
     <div
-      className={`${
-        showSidebar ? "ml-80" : "ml-0"
-      } flex justify-between items-start px-6 py-3 w-full transistion-500ms`}
+      className={`flex justify-between items-start py-3 w-full transistion-500ms`}
     >
       <i
         onClick={() => setShowSidebar(!showSidebar)}

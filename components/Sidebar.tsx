@@ -51,7 +51,7 @@ const Sidebar = () => {
         <div>
           {data.sidebar.map((i) =>
             i.isSubmenu ? (
-              <>
+              <div key={i.name}>
                 <div
                   onClick={() => handleSubmenu(i.name)}
                   className="flex justify-between items-center pr-3 cursor-pointer"
@@ -78,7 +78,7 @@ const Sidebar = () => {
                 >
                   {i?.submenu &&
                     i?.submenu.map((s) => (
-                      <li>
+                      <li key={i.name}>
                         <Link
                           href={s.path}
                           className="flex items-center gap-2 py-3 px-6"
@@ -88,9 +88,10 @@ const Sidebar = () => {
                       </li>
                     ))}
                 </ul>
-              </>
+              </div>
             ) : (
               <Link
+                key={i.name}
                 href={i.path as string}
                 className="flex items-center gap-2 p-3 "
               >
