@@ -1,48 +1,73 @@
 import React from "react";
 import DashboardCard from "./DashboardCard";
 import data from "@/json/index.json";
+import DashboardOverview from "./DashboardOverview";
+import BarChart from "@/charts/BarChart";
+import DonutChart from "@/charts/DounutChart";
 
 const DashboardPg = () => {
   return (
     <>
       <div className="flex gap-10 dm-sans">
         <DashboardCard />
-        <div className="flex flex-col text-base flex-1 justify-between shadow-lg shadow-gray-800 rounded">
-          <div className="p-4 flex items-center justify-between w-full">
-            <span className="text-2xl">Today&apos;s Overview</span>
-            <select
-              name="overview"
-              id="overview"
-              className="brder px-3 py-2 bg-transparent capitalize outline-none border border-gray-600"
-            >
-              {data.overview_filter.map((item) => (
-                <option
-                  className="capitalize bg-black py-2 px-4 border-none outline-none pr-3"
-                  key={item}
-                  value={item}
-                >
-                  {item.replace("_", " ")}
-                </option>
+        <DashboardOverview />
+      </div>
+      <div className="mt-10 flex gap-10">
+        <div className="shadow-gray-800 shadow-lg w-[75%] rounded-sm">
+          <div className="border-b border-gray-600 px-4 py-3 flex items-center justify-between">
+            <span className="text-base dm-sans font-semibold">
+              Payment Activity
+            </span>
+            <div className="gap-2 flex">
+              {["1m", "6m", "12y"].map((i) => (
+                <span className="bg-gray-600 cursor-pointer text-white rounded-sm py-1 px-2 uppercase  text-sm">
+                  {i}
+                </span>
               ))}
-            </select>
+            </div>
           </div>
-          <div className="border-gray-600 border-t w-full flex justify-between">
-            {data.overview.map((item) => (
-              <div
-                key={item.name}
-                className="flex flex-col w-full py-3 px-4 border-r border-gray-600"
-              >
-                <span className="text-2xl font-semibold">{item.count}</span>
-                <div className="flex justify-between items-center w-full mt-4">
-                  <span className="capitalize">{item.name}</span>
-                  <div
-                    className={`rounded-full ${item.icon_bg} h-8 w-8 flex-center`}
-                  >
-                    <i className={`bx ${item.icon} text-lg`}></i>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="flex justify-end pt-2 pr-4 dm-sans text-green-700 font-semibold">
+            <div className="flex gap-4">
+              <span>Paid: $0</span>
+              <span>Unpaid: $45195</span>
+            </div>
+          </div>
+          <div className="py-6 px-4 w-full">
+            <BarChart />
+          </div>
+        </div>
+        <div className="px-4 py-2 shadow-gray-800 shadow-lg w-[35%] rounded-sm">
+          <div className=" flex items-center justify-between">
+            <span className="text-base dm-sans font-semibold">Structure</span>
+            <button className="border px-3 py-2 text-sm rounded-md dm-sans">
+              Select data range
+            </button>
+          </div>
+          <div className="py-6">
+            <DonutChart />
+          </div>
+          <div className="flex justify-between dm-sans">
+            <div className="flex gap-2">
+              <i className="bx bx-radio-circle-marked text-green-600 text-lg"></i>
+              <span>Paid</span>
+            </div>
+            <span className="bg-green-700 px-2 py-1 text-xs rounded">$0</span>
+          </div>
+          <div className="flex justify-between mt-3">
+            <div className="flex gap-2">
+              <i className="bx bx-radio-circle-marked text-green-600 text-lg"></i>
+              <span>Unpaid</span>
+            </div>
+            <span className="bg-green-700 px-2 py-1 text-xs rounded">
+              $234230
+            </span>
+          </div>
+          <div className="flex justify-between mt-3">
+            <div className="flex gap-2">
+              <i className="bx bx-radio-circle-marked text-green-600 text-lg"></i>
+              <span>Cancelled</span>
+            </div>
+            <span className="bg-green-700 px-2 py-1 text-xs rounded">$876</span>
           </div>
         </div>
       </div>
