@@ -1,4 +1,3 @@
-// src/components/MapChart.tsx
 import React, { useState } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { Tooltip } from "react-tooltip";
@@ -7,11 +6,21 @@ import json from "@/json/map.json";
 const MapChart: React.FC = () => {
   const [tooltipContent, setTooltipContent] = useState<string>("");
 
+  const handleMouseMove = (geo: any) => {
+    const { name } = geo.properties;
+    setTooltipContent(name);
+  };
+
+  const handleMouseLeave = () => {
+    setTooltipContent("");
+  };
+
   return (
     <>
       <ComposableMap
         data-tooltip-id="map-tooltip"
         data-tooltip-content={tooltipContent}
+        data-tooltip-float={true}
       >
         <Geographies geography={json}>
           {({ geographies }) =>
@@ -19,13 +28,8 @@ const MapChart: React.FC = () => {
               <Geography
                 key={geo.rsmKey}
                 geography={geo}
-                onMouseEnter={() => {
-                  const { NAME } = geo.properties;
-                  setTooltipContent(NAME);
-                }}
-                onMouseLeave={() => {
-                  setTooltipContent("");
-                }}
+                onMouseEnter={(e) => handleMouseMove(geo)}
+                onMouseLeave={handleMouseLeave}
                 style={{
                   default: {
                     fill: "#1f2937",
@@ -45,7 +49,7 @@ const MapChart: React.FC = () => {
           }
         </Geographies>
       </ComposableMap>
-      <Tooltip id="map-tooltip" />
+      <Tooltip id="map-tooltip" data-tooltip-float={true} />
     </>
   );
 };

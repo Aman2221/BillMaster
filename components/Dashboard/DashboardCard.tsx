@@ -8,7 +8,7 @@ const DashboardCard = () => {
       <span className="uppercase font-semibold text-gray-400 dm-sans">
         dashboard
       </span>
-      <div className="flex justify-between shadow-lg shadow-gray-800 rounded p-4 gap-20">
+      <div className="flex justify-between shadow-md shadow-gray-800 rounded p-4 gap-20">
         <div className="flex flex-col justify-start items-start">
           <span className="dm-sans text-lg">
             Professional Invoices Made Easy.

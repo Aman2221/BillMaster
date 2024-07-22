@@ -6,7 +6,7 @@ import React from "react";
 const PaymentActivity = () => {
   return (
     <div className="mt-10 flex gap-10">
-      <div className="shadow-gray-800 shadow-lg w-[75%] rounded-sm">
+      <div className="shadow-gray-800 shadow-md w-[75%] rounded-sm">
         <div className="border-b border-gray-600 px-4 py-3 flex items-center justify-between">
           <span className="text-base dm-sans font-semibold">
             Payment Activity
@@ -29,10 +29,10 @@ const PaymentActivity = () => {
           <BarChart />
         </div>
       </div>
-      <div className="px-4 py-2 shadow-gray-800 shadow-lg w-[35%] rounded-sm">
+      <div className="px-4 py-2 shadow-gray-800 shadow-md w-[35%] rounded-sm">
         <div className=" flex items-center justify-between">
           <span className="text-base dm-sans font-semibold">Structure</span>
-          <CalendarButton />
+          <CalendarButton extrClss="-left-64" />
         </div>
         <div className="py-6">
           <DonutChart />

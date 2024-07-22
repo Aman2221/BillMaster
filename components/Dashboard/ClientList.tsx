@@ -5,7 +5,7 @@ import React from "react";
 const ClientList = () => {
   return (
     <div className="flex mt-10 dm-sans gap-10">
-      <div className="p-3 shadow-gray-800 shadow-lg w-[40%] rounded-sm max-h-max">
+      <div className="p-3 shadow-gray-800 shadow-md w-[40%] rounded-sm max-h-max">
         <span className="text-base">Latest Client List</span>
 
         <div className="relative overflow-x-auto py-3">
@@ -37,7 +37,7 @@ const ClientList = () => {
                 <td className="px-6 py-4">New client</td>
                 <td className="px-6 py-4">info@gmail.com</td>
                 <td className="px-6 py-4">
-                  <span className="bg-gray-600 p-1 rounded">
+                  <span className="bg-gray-600 p-1 rounded cursor-pointer">
                     <i className="bx bxs-file-pdf text-sm"></i>
                   </span>
                 </td>
@@ -46,7 +46,7 @@ const ClientList = () => {
           </table>
         </div>
       </div>
-      <div className="shadow-gray-800 shadow-lg w-[30%] rounded-sm pb-3">
+      <div className="shadow-gray-800 shadow-md w-[30%] rounded-sm pb-3">
         <div className="flex items-center justify-between border-b border-gray-600 py-3 px-4">
           <span>Payment Overview</span>
           <CalendarButton />

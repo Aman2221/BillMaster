@@ -31,3 +31,18 @@
 .transistion-500ms {
   transition: 0.5s;
 }
+
+.react-calendar__tile--now,
+.react-calendar__tile--active,
+.react-calendar__navigation,
+.react-calendar__tile:enabled:hover,
+.react-calendar__navigation button:enabled:hover {
+  background-color: rgb(55 65 81) !important;
+}
+.react-calendar__tile:disabled {
+  cursor: not-allowed;
+  background-color: rgb(77, 85, 97) !important;
+}
+.react-calendar__navigation button:disabled {
+  display: none;
+}
