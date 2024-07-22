@@ -25,8 +25,8 @@ const Sidebar = () => {
   return (
     <div
       className={`${
-        showSidebar ? "left-0" : "-left-80"
-      } w-80 h-dvh fixed bg-slate-900 dm-sans transistion-500ms`}
+        showSidebar ? "left-0" : "-left-72"
+      } w-72 h-dvh fixed bg-slate-900 dm-sans transistion-500ms`}
     >
       <div className="logo flex-center">
         <Image
@@ -72,8 +72,8 @@ const Sidebar = () => {
                 <ul
                   className={
                     showSubMenu[i.name as any]
-                      ? "block transistion-500ms"
-                      : "hidden transistion-500ms"
+                      ? " block transistion-500ms"
+                      : " hidden transistion-500ms"
                   }
                 >
                   {i?.submenu &&

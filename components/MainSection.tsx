@@ -7,8 +7,8 @@ const MainSection = ({ children }: { children: ReactNode }) => {
   return (
     <div
       className={`${
-        showSidebar ? "ml-80" : "ml-0"
-      } flex flex-col px-6 transistion-500ms`}
+        showSidebar ? "ml-72" : "ml-0"
+      } flex flex-col transistion-500ms`}
     >
       {children}
     </div>

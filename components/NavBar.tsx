@@ -21,7 +21,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="sticky bg-black top-0 w-full z-10">
+    <div className="sticky bg-black top-0 w-full px-6 z-10 shadow shadow-gray-800">
       <div className={`flex justify-between items-start py-3 w-full `}>
         <i
           onClick={() => setShowSidebar(!showSidebar)}
