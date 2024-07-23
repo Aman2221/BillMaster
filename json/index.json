@@ -1,4 +1,56 @@
 {
+    "client_list" : [
+        {
+            "sr._no" : 1,
+            "client_name" : "john", 
+            "email" : "infro@gmail.com", 
+            "action" : "action"
+        },
+        {
+            "sr._no" : 2,
+            "client_name" : "Ramana", 
+            "email" : "exa@gmail.com", 
+            "action" : "action"
+        }
+    ],
+    "seles_rev" : [
+        {
+            "country" : "Inida",
+            "orders" : 45, 
+            "earnings" : 87888
+        },
+        {
+            "country" : "UAE",
+            "orders" : 4, 
+            "earnings" : 1988
+        }   
+    ],
+    "invoice_list" : [
+      {
+        "invoice_id" : "#175515837",
+        "clinet" : "Roman",
+        "amount" : 255,
+        "date" : "17 Jul, 2024",
+        "status" : "paid",
+        "action" : "action"
+      },
+      {
+        "invoice_id" : "#175515838",
+        "clinet" : "Roman",
+        "amount" : 455,
+        "date" : "17 Jul, 2024",
+        "status" : "unpaid",
+        "action" : "action"
+      },
+      {
+        "invoice_id" : "#175515839",
+        "clinet" : "Roman",
+        "amount" : 4456,
+        "date" : "17 Jul, 2024",
+        "status" : "paid",
+        "action" : "action"
+      }
+    ],
     "overview_filter" :["today", "last_week", "last_month", "last_year"],
     "overview" : [
         {

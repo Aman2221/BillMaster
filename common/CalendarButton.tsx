@@ -34,7 +34,7 @@ const CalendarButton = ({ extrClss = "" }: { extrClss?: string }) => {
               onChange={handleChange}
               value={selectedDate}
               allowPartialRange={true}
-              className="bg-slate-800 dm-sans"
+              className="bg-slate-800 dm-sans border-none border-0 text-sm"
             />
           </div>
         </div>

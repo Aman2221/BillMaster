@@ -1,6 +1,8 @@
 import LineChart from "@/charts/LineChart";
 import CalendarButton from "@/common/CalendarButton";
+import TableComp from "@/common/Table";
 import React from "react";
+import data from "@/json/index.json";
 
 const ClientList = () => {
   return (
@@ -8,43 +10,11 @@ const ClientList = () => {
       <div className="p-3 shadow-gray-800 shadow-md w-[40%] rounded-sm max-h-max">
         <span className="text-base">Latest Client List</span>
 
-        <div className="relative overflow-x-auto py-3">
-          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-              <tr>
-                <th scope="col" className="px-6 py-3">
-                  sr. no
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  clinet name
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  email
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  action
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                >
-                  01
-                </th>
-                <td className="px-6 py-4">New client</td>
-                <td className="px-6 py-4">info@gmail.com</td>
-                <td className="px-6 py-4">
-                  <span className="bg-gray-600 p-1 rounded cursor-pointer">
-                    <i className="bx bxs-file-pdf text-sm"></i>
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <div className="relative overflow-x-auto py-3"></div>
+        <TableComp
+          headings={Object.keys(data.client_list[0])}
+          values={data.client_list}
+        />
       </div>
       <div className="shadow-gray-800 shadow-md w-[30%] rounded-sm pb-3">
         <div className="flex items-center justify-between border-b border-gray-600 py-3 px-4">

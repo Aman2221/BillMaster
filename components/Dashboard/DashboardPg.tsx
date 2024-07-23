@@ -5,6 +5,7 @@ import DashboardOverview from "./DashboardOverview";
 import PaymentActivity from "./PaymentActivity";
 import ClientList from "./ClientList";
 import SalesRevenue from "./SalesRevenue";
+import CreatePDF from "@/common/CreatePDF";
 
 const DashboardPg = () => {
   return (
