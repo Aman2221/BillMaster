@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import "@/styles/main.css";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Billing Software",

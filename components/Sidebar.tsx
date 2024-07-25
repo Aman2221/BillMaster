@@ -51,7 +51,7 @@ const Sidebar = () => {
         <div>
           {data.sidebar.map((i, index) =>
             i.isSubmenu ? (
-              <div key={index}>
+              <div key={i.name}>
                 <div
                   onClick={() => handleSubmenu(i.name)}
                   className="flex justify-between items-center pr-3 cursor-pointer"
@@ -76,17 +76,16 @@ const Sidebar = () => {
                       : " hidden transistion-500ms"
                   }
                 >
-                  {i?.submenu &&
-                    i?.submenu.map((s) => (
-                      <li key={i.name}>
-                        <Link
-                          href={s.path}
-                          className="flex items-center gap-2 py-3 px-6"
-                        >
-                          <SidebarMenu icon={s.icon} name={s.name} />
-                        </Link>
-                      </li>
-                    ))}
+                  {i?.submenu?.map((s) => (
+                    <li key={s.path}>
+                      <Link
+                        href={s.path}
+                        className="flex items-center gap-2 py-3 px-6"
+                      >
+                        <SidebarMenu icon={s.icon} name={s.name} />
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             ) : (

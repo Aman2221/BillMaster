@@ -8,17 +8,15 @@ import MainSection from "./MainSection";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <>
-      <MyProvider>
-        <>
-          <Sidebar />
-          <MainSection>
-            <NavBar />
-            {children}
-          </MainSection>
-        </>
-      </MyProvider>
-    </>
+    <MyProvider>
+      <>
+        <Sidebar />
+        <MainSection>
+          <NavBar />
+          {children}
+        </MainSection>
+      </>
+    </MyProvider>
   );
 };
 

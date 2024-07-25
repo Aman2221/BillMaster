@@ -19,62 +19,58 @@ const TableComp = ({
           ))}
         </tr>
       </thead>
-      {values.map((item, i) => (
+      {values.map((row, i) => (
         <tbody key={i}>
           <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-            {Object.values(item).map((item, i) => {
-              return (
-                <>
-                  {item == "action" ? (
-                    <th
-                      key={item as string}
-                      scope="row"
-                      className="px-4 py-3 text-sm  text-gray-900 whitespace-nowrap dark:text-white"
+            {Object.values(row).map((val) =>
+              val == "action" ? (
+                <th
+                  key={val as string}
+                  scope="row"
+                  className="px-4 py-3 text-sm  text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  {headings.includes("invoice_id") ? (
+                    <Link
+                      href="/invoice"
+                      className="flex-center text-xs rounded bg-gray-600 text-black cursor-pointer"
                     >
-                      {headings.includes("invoice_id") ? (
-                        <Link
-                          href="/invoice"
-                          className="flex-center text-xs rounded bg-gray-600 text-black cursor-pointer"
-                        >
-                          <i className="bx bx-dots-horizontal-rounded text-white text-sm"></i>
-                        </Link>
-                      ) : (
-                        <Link
-                          href="/invoice"
-                          className="bg-gray-600 p-1 rounded cursor-pointer"
-                        >
-                          <i className="bx bxs-file-pdf text-sm"></i>
-                        </Link>
-                      )}
-                    </th>
-                  ) : item == "paid" || item == "unpaid" ? (
-                    <th
-                      key={item as string}
-                      scope="row"
-                      className={`px-4 py-3 text-xs`}
-                    >
-                      {item == "paid" ? (
-                        <span className="px-1 text-xs rounded bg-green-300 text-black cursor-pointer capitalize font-normal">
-                          paid
-                        </span>
-                      ) : (
-                        <span className="px-1 text-xs rounded bg-red-300 text-black cursor-pointer capitalize font-normal">
-                          Unpaid
-                        </span>
-                      )}
-                    </th>
+                      <i className="bx bx-dots-horizontal-rounded text-white text-sm"></i>
+                    </Link>
                   ) : (
-                    <th
-                      key={item as string}
-                      scope="row"
-                      className="px-4 py-3 capitalize font-normal  text-xs text-gray-900 whitespace-nowrap dark:text-white"
+                    <Link
+                      href="/invoice"
+                      className="bg-gray-600 p-1 rounded cursor-pointer"
                     >
-                      {item as string}
-                    </th>
+                      <i className="bx bxs-file-pdf text-sm"></i>
+                    </Link>
                   )}
-                </>
-              );
-            })}
+                </th>
+              ) : val == "paid" || val == "unpaid" ? (
+                <th
+                  key={val as string}
+                  scope="row"
+                  className={`px-4 py-3 text-xs`}
+                >
+                  {val == "paid" ? (
+                    <span className="px-1 text-xs rounded bg-green-300 text-black cursor-pointer capitalize font-normal">
+                      paid
+                    </span>
+                  ) : (
+                    <span className="px-1 text-xs rounded bg-red-300 text-black cursor-pointer capitalize font-normal">
+                      Unpaid
+                    </span>
+                  )}
+                </th>
+              ) : (
+                <th
+                  key={val as string}
+                  scope="row"
+                  className="px-4 py-3 capitalize font-normal  text-xs text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  {val as string}
+                </th>
+              )
+            )}
           </tr>
         </tbody>
       ))}
