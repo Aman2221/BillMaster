@@ -8,7 +8,7 @@ import { useMyContext } from "@/context/my-context";
 const NavBar = () => {
   const [userMenu, setShowUserMenu] = useState(false);
   const [langMenu, setShowLangMenu] = useState(false);
-  const { showSidebar, setShowSidebar } = useMyContext();
+  const { showSidebar, setShowSidebar, theme, setTheme } = useMyContext();
 
   const [selectedLang, setSelectedLang] = useState({
     imrURL: "/flags/us.svg",
@@ -20,14 +20,18 @@ const NavBar = () => {
     setShowLangMenu(!langMenu);
   };
 
+  const toggleTheme = () => {
+    setTheme((prevTheme: string) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
   return (
-    <div className="sticky bg-black top-0 w-full px-6 z-10 shadow shadow-gray-800">
+    <div className="sticky bg-white dark:bg-black  top-0 w-full px-6 z-10 shadow shadow-gray-800">
       <div className={`flex justify-between items-start py-3 w-full `}>
         <i
           onClick={() => setShowSidebar(!showSidebar)}
           className="bx bx-menu-alt-left text-white text-2xl cursor-pointer"
         ></i>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 ">
           <div className="relative cursor-pointer">
             <Image
               width={0}
@@ -46,7 +50,17 @@ const NavBar = () => {
           </div>
 
           <FullscreenButton />
-          <i className="bx bx-moon text-white text-2xl cursor-pointer"></i>
+          {theme == "dark" ? (
+            <i
+              onClick={toggleTheme}
+              className="bx bx-moon text-white text-2xl cursor-pointer"
+            ></i>
+          ) : (
+            <i
+              onClick={toggleTheme}
+              className="bx bx-sun  text-yellow-400 text-2xl cursor-pointer"
+            ></i>
+          )}
 
           <div className="relative">
             <div className="notification-count rounded-full bg-red-400 flex-center text-xs w-4 h-4 absolute right-0">

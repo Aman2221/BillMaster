@@ -28,7 +28,7 @@ const SalesRevenue = () => {
         <div className="font-semibold border-b border-gray-800 p-3">
           <span>Latest Invoice List</span>
         </div>
-        <div className="mt-3">
+        <div className="mt-3 w-full">
           <TableComp
             headings={Object.keys(data.invoice_list[0])}
             values={data.invoice_list}

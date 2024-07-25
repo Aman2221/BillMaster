@@ -13,7 +13,10 @@ const PaymentActivity = () => {
           </span>
           <div className="gap-2 flex">
             {["1m", "6m", "12y"].map((i) => (
-              <span className="bg-gray-600 cursor-pointer text-white rounded-sm py-1 px-2 uppercase  text-sm">
+              <span
+                key={i}
+                className="bg-gray-600 cursor-pointer text-white rounded-sm py-1 px-2 uppercase  text-sm"
+              >
                 {i}
               </span>
             ))}

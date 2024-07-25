@@ -26,7 +26,7 @@ const Sidebar = () => {
     <div
       className={`${
         showSidebar ? "left-0" : "-left-72"
-      } w-72 h-dvh fixed bg-slate-900 dm-sans transistion-500ms`}
+      } w-72 h-dvh fixed bg-red-900 dark:bg-slate-900 dm-sans transistion-500ms`}
     >
       <div className="logo flex-center">
         <Image
@@ -49,9 +49,9 @@ const Sidebar = () => {
           dashboard
         </span>
         <div>
-          {data.sidebar.map((i) =>
+          {data.sidebar.map((i, index) =>
             i.isSubmenu ? (
-              <div key={i.name}>
+              <div key={index}>
                 <div
                   onClick={() => handleSubmenu(i.name)}
                   className="flex justify-between items-center pr-3 cursor-pointer"
@@ -91,7 +91,7 @@ const Sidebar = () => {
               </div>
             ) : (
               <Link
-                key={i.name}
+                key={index}
                 href={i.path as string}
                 className="flex items-center gap-2 p-3 "
               >
