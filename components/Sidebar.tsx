@@ -7,19 +7,10 @@ import { useMyContext } from "@/context/my-context";
 
 const Sidebar = () => {
   const { showSidebar, setShowSidebar } = useMyContext();
-  const [showSubMenu, setShowSubMenu] = useState(
-    data.sidebar
-      .filter((i) => i.isSubmenu)
-      .map((i) => {
-        return { [i.name]: false };
-      })
-  );
+  const [showSubMenu, setShowSubMenu] = useState("");
 
   const handleSubmenu = (name: string) => {
-    setShowSubMenu({
-      ...showSubMenu,
-      [name]: !showSubMenu[name as any],
-    });
+    setShowSubMenu(name);
   };
 
   return (
@@ -42,9 +33,9 @@ const Sidebar = () => {
         <span className="font-semibold uppercase text-sm text-gray-400 px-3 ">
           Menu
         </span>
-        <div className="flex items-center gap-2 p-3 mb-3">
+        <Link href="/dashboard" className="flex items-center gap-2 p-3 mb-3">
           <SidebarMenu icon="bx-home-alt-2" name="dashboard" />
-        </div>
+        </Link>
         <span className="font-semibold uppercase text-sm text-gray-400 px-3">
           dashboard
         </span>
@@ -53,7 +44,9 @@ const Sidebar = () => {
             i.isSubmenu ? (
               <div key={i.name}>
                 <div
-                  onClick={() => handleSubmenu(i.name)}
+                  onClick={() =>
+                    handleSubmenu(i.name == showSubMenu ? "" : i.name)
+                  }
                   className="flex justify-between items-center pr-3 cursor-pointer"
                 >
                   <div className="flex items-center gap-2 p-3 ">
@@ -63,18 +56,22 @@ const Sidebar = () => {
                   <i
                     className={`bx 
                   ${
-                    showSubMenu[i.name as any]
+                    showSubMenu == i.name
                       ? "bx-chevron-down"
                       : "bx-chevron-right"
                   }  text-lg font-bold`}
                   ></i>
                 </div>
                 <ul
-                  className={
-                    showSubMenu[i.name as any]
-                      ? " block transistion-500ms"
-                      : " hidden transistion-500ms"
-                  }
+                  className={`transition-all duration-900 ease-in-out overflow-hidden ${
+                    showSubMenu == i.name ? "max-h-40" : "max-h-0"
+                  }`}
+
+                  // className={
+                  //   showSubMenu == i.name
+                  //     ? " block transistion-500ms"
+                  //     : " hidden transistion-500ms"
+                  // }
                 >
                   {i?.submenu?.map((s) => (
                     <li key={s.path}>

@@ -1,3 +1,4 @@
+import hideOverlay from "@/HOC/hideOverlay";
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -14,6 +15,9 @@ const CalendarButton = ({ extrClss = "" }: { extrClss?: string }) => {
     setShowCal(!showCal);
     setSelectedDate(date);
   };
+
+  const CalendarComp = hideOverlay(Calendar, setShowCal);
+
   return (
     <div className="relative">
       <button
@@ -27,7 +31,7 @@ const CalendarButton = ({ extrClss = "" }: { extrClss?: string }) => {
           className={`absolute ${extrClss} bg-gray800 p-3 rounded shadow-sm animate__animated animate__fadeIn`}
         >
           <div className="relative">
-            <Calendar
+            <CalendarComp
               selectRange={true}
               defaultActiveStartDate={new Date()}
               maxDate={new Date()}
